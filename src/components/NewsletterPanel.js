@@ -61,7 +61,11 @@ const NewsletterPanel = () => {
   const handleScroll = () => {
     const body = document.querySelector('body');
     const fraction = window.scrollY / body.clientHeight;
-    if (Math.abs(fraction - 1 / 3) <= 1e-2) {
+    const fractionWindow = window.scrollY / window.innerHeight;
+    if (
+      Math.abs(fraction - 1 / 3) <= 1e-2 ||
+      Math.abs(fractionWindow - 1 / 3) <= 1e-2
+    ) {
       setCountOneThirdScroll(countOneThirdScroll + 1);
     }
   };
