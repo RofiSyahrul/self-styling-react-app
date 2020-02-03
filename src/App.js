@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { colors } from './constants';
+import { Wrapper } from './components/basic';
+import NotificationPanel from './components/NotificationPanel';
+import Header from './components/Header';
+import HighlightsPanel from './components/HighlightsPanel';
+import Footer from './components/Footer';
+import NewsletterPanel from './components/NewsletterPanel';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <Wrapper
+    id='container'
+    width='100%'
+    maxWidth='1366px'
+    backgroundColor={colors.smokeGrey}
+    overflowY='visible'
+    overflowX='visible'
+    align='flex-start'
+  >
+    <NotificationPanel />
+    <Header />
+    <HighlightsPanel />
+    <Footer />
+    <NewsletterPanel />
+  </Wrapper>
+);
 
 export default App;
